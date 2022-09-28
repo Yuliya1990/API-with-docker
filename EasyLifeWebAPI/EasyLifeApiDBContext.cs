@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace EasylifeWebAPI
+namespace EasyLifeWebAPI
 {
     public partial class EasyLifeApiDBContext : DbContext
     {
@@ -14,7 +14,8 @@ namespace EasylifeWebAPI
         public EasyLifeApiDBContext(DbContextOptions<EasyLifeApiDBContext> options)
             : base(options)
         {
-  
+           // Database.EnsureDeleted();
+            Database.EnsureCreated();
         }
 
         public virtual DbSet<Cleaning> Cleanings { get; set; } = null!;

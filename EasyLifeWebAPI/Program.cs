@@ -1,4 +1,4 @@
-using EasylifeWebAPI;
+using EasyLifeWebAPI;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

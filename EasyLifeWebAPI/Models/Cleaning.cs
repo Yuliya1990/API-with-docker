@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace EasylifeWebAPI
+namespace EasyLifeWebAPI
 {
     public partial class Cleaning
     {

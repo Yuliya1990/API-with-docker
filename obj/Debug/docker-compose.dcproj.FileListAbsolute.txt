@@ -1,0 +1,1 @@
+C:\Users\Юлия\Desktop\EasyLife\api\EasyLifeWebAPI\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache

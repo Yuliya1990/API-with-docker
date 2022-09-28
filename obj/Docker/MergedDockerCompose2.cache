@@ -1,0 +1,43 @@
+name: dockercompose13755839847884653607
+services:
+  easylifewebapi:
+    build:
+      context: C:\Users\Р®Р»РёСЏ\Desktop\EasyLife\api\EasyLifeWebAPI
+      dockerfile: EasyLifeWebAPI/Dockerfile
+    depends_on:
+      sqlserverService:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: easylifewebapi
+    networks:
+      easynet: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5000"
+      protocol: tcp
+  sqlserverService:
+    container_name: sqlserverService
+    environment:
+      ACCEPT_EULA: "true"
+      SA_PASSWORD: SwN123456789
+    hostname: sqlserverService
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      easynet: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "1433"
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: C:\Users\Р®Р»РёСЏ\Desktop\EasyLife\api\EasyLifeWebAPI\data\mssql
+      target: /var/opt/mssql3
+      bind:
+        create_host_path: true
+networks:
+  easynet:
+    name: dockercompose13755839847884653607_easynet
+    driver: bridge
